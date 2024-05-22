@@ -1,0 +1,6 @@
+<%if user_signed_in? %>
+  <div>Hello <%=current_user.email%></div>
+  <%= button_to "Sing out", destroy_user_session_path, method: :delete %>
+<%else %>
+  <%= button_to "Sing In", new_user_session_path %>
+<% end %>
